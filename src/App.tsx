@@ -18,6 +18,8 @@ import Blank from "./pages/Blank";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
+import ConsentForm from "./components/auth/ConsentForm";
+import ConsentPage from "./pages/AuthPages/Consent";
 
 export default function App() {
   return (
@@ -56,6 +58,7 @@ export default function App() {
           {/* Auth Layout */}
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/consent" element={<ConsentPage />} />
 
           {/* Fallback Route */}
           <Route path="*" element={<NotFound />} />
