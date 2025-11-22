@@ -12,7 +12,7 @@ const IS_BROWSER = typeof window !== 'undefined';
 
 // let apiUrl = import.meta.env.VITE_APP_API_URL;
 // let apiUrl = import.meta.env.VITE_APP_API_URL;
-let apiUrl = "https://express-app-ten-khaki.vercel.app"
+let apiUrl = "http://localhost:8000"
 console.log("API URL:", apiUrl);
 
 
