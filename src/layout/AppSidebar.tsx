@@ -8,6 +8,7 @@ import {
   ChevronDownIcon,
   GridIcon,
   HorizontaLDots,
+  InfoIcon,
   ListIcon,
   PageIcon,
   PieChartIcon,
@@ -52,6 +53,12 @@ const getNavItems = (isLoggedIn: boolean): NavItem[] => {
     // For example, remove 'User Profile' if it's only for logged-in users
     // return baseItems.filter(item => item.name !== "User Profile");
   }
+
+  baseItems.push({
+    name: "General Information",
+    icon: <InfoIcon />,
+    path: "/general-info",
+  });
 
   return baseItems;
 };
@@ -147,6 +154,10 @@ const AppSidebar: React.FC = () => {
           {nav.subItems ? (
             <button
               onClick={() => handleSubmenuToggle(index, menuType)}
+              aria-expanded={
+                openSubmenu?.type === menuType && openSubmenu?.index === index
+              }
+              aria-controls={`${menuType}-${index}`}
               className={`menu-item group ${openSubmenu?.type === menuType && openSubmenu?.index === index
                 ? "menu-item-active"
                 : "menu-item-inactive"
@@ -199,6 +210,7 @@ const AppSidebar: React.FC = () => {
           )}
           {nav.subItems && (isExpanded || isHovered || isMobileOpen) && (
             <div
+              id={`${menuType}-${index}`}
               ref={(el) => {
                 subMenuRefs.current[`${menuType}-${index}`] = el;
               }}
@@ -283,7 +295,7 @@ const AppSidebar: React.FC = () => {
         </Link>
       </div>
       <div className="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar">
-        <nav className="mb-6">
+        <nav className="mb-6" aria-label="Sidebar Navigation">
           <div className="flex flex-col gap-4">
             <div>
               <h2

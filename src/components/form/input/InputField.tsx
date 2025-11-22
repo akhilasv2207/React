@@ -59,18 +59,20 @@ const Input: FC<InputProps> = ({
         max={max}
         step={step}
         disabled={disabled}
+        aria-invalid={error ? "true" : "false"}
+        aria-describedby={hint && id ? `${id}-hint` : undefined}
         className={inputClasses}
       />
 
       {hint && (
         <p
-          className={`mt-1.5 text-xs ${
-            error
+          id={id ? `${id}-hint` : undefined}
+          className={`mt-1.5 text-xs ${error
               ? "text-error-500"
               : success
-              ? "text-success-500"
-              : "text-gray-500"
-          }`}
+                ? "text-success-500"
+                : "text-gray-500"
+            }`}
         >
           {hint}
         </p>

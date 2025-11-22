@@ -17,6 +17,9 @@ export default function UserDropdown() {
     <div className="relative">
       <button
         onClick={toggleDropdown}
+        aria-expanded={isOpen}
+        aria-haspopup="true"
+        aria-label="User menu"
         className="flex items-center text-gray-700 dropdown-toggle dark:text-gray-400"
       >
         <span className="mr-3 overflow-hidden rounded-full h-11 w-11">

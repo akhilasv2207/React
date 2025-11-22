@@ -20,6 +20,7 @@ import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
 import ConsentForm from "./components/auth/ConsentForm";
 import ConsentPage from "./pages/AuthPages/Consent";
+import GeneralInformation from "./components/general-info/GeneralInformation";
 
 export default function App() {
   return (
@@ -41,6 +42,7 @@ export default function App() {
 
             {/* Tables */}
             <Route path="/basic-tables" element={<BasicTables />} />
+            <Route path="/general-info" element={<GeneralInformation title={""} description={""} linkHref={""} />} />
 
             {/* Ui Elements */}
             <Route path="/alerts" element={<Alerts />} />
