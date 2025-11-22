@@ -3,7 +3,7 @@ name: Deploy React Vite App
 on:
   push:
     branches:
-      - main
+      - master
 
 permissions:
   contents: write   # 🔥 Required to push to gh-pages
