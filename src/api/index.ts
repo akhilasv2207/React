@@ -10,7 +10,11 @@ import { loginSuccess, logoutSuccess } from '../redux/reducers/auth-slice';
 
 const IS_BROWSER = typeof window !== 'undefined';
 
-let apiUrl = import.meta.env.VITE_APP_API_URL;
+// let apiUrl = import.meta.env.VITE_APP_API_URL;
+// let apiUrl = import.meta.env.VITE_APP_API_URL;
+let apiUrl = "https://express-app-ten-khaki.vercel.app"
+console.log("API URL:", apiUrl);
+
 
 
 if (IS_BROWSER) {

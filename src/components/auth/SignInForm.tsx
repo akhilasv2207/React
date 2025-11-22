@@ -25,8 +25,12 @@ export default function SignInForm() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
     setLoading(true)
-    await dispatch(login(formState));
+    let response = await dispatch(login(formState));
+    if (response?.success) {
+
+    }
     setLoading(false)
 
     // optional redirect here: navigate("/dashboard")
